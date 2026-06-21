@@ -69,8 +69,8 @@ export default function Home() {
             </h1>
 
             <p className={`text-lg sm:text-xl text-zyvo-muted mt-6 max-w-2xl leading-relaxed ${visible.hero ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'}`}>
-              Le premier marketplace de services en Algérie. Des prestataires vérifiés, 
-              notés et disponibles près de chez vous. Ménage, plomberie, cours, santé et plus.
+              Des milliers de prestataires vérifiés partout en Algérie. 
+              Ménage, plomberie, cours, santé : trouvez le bon pro en un clic.
             </p>
 
             <div className={`flex flex-wrap gap-4 mt-10 ${visible.hero ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'}`}>

@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
-import { MapPin, Home, Search, Calendar, Heart, User } from 'lucide-react'
+import { MapPin, Home, Search, Calendar, Heart, User, Sparkles } from 'lucide-react'
 import { useAuth } from '../context/auth'
 
 const navLinks = [
@@ -14,14 +14,14 @@ export default function Header() {
   const { user } = useAuth()
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-slate-100">
+    <header className="fixed top-0 left-0 right-0 z-50 glass-premium">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg gradient-neon flex items-center justify-center font-bold text-white text-sm shadow-neon">
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-8 h-8 rounded-xl gradient-primary flex items-center justify-center font-bold text-white text-sm gradient-glow group-hover:scale-110 transition-transform duration-300">
               Z
             </div>
-            <span className="text-lg font-extrabold text-gradient">Zyvo</span>
+            <span className="text-lg font-extrabold gradient-text">Zyvo</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
@@ -31,10 +31,10 @@ export default function Header() {
                 to={to}
                 end={to === '/'}
                 className={({ isActive }) =>
-                  `flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                  `flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
                     isActive
-                      ? 'bg-zyvo-primary/5 text-zyvo-primary'
-                      : 'text-slate-500 hover:text-zyvo-primary hover:bg-slate-50'
+                      ? 'bg-white/10 text-white'
+                      : 'text-zyvo-muted hover:text-white hover:bg-white/5'
                   }`
                 }
               >
@@ -45,14 +45,14 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-1.5 text-xs font-medium text-slate-400">
+            <div className="hidden sm:flex items-center gap-1.5 text-xs font-medium text-zyvo-muted">
               <MapPin className="w-3.5 h-3.5" />
               Alger
             </div>
             {user ? (
               <Link
                 to="/profile"
-                className="w-8 h-8 rounded-lg gradient-neon flex items-center justify-center text-xs font-bold text-white"
+                className="w-8 h-8 rounded-xl gradient-primary flex items-center justify-center text-xs font-bold text-white"
               >
                 {user.name.charAt(0)}
               </Link>
@@ -60,13 +60,13 @@ export default function Header() {
               <div className="flex items-center gap-2">
                 <Link
                   to="/auth"
-                  className="text-sm font-semibold text-slate-600 hover:text-zyvo-dark transition-colors px-3 py-2"
+                  className="text-sm font-semibold text-zyvo-muted hover:text-white transition-colors px-3 py-2"
                 >
                   Connexion
                 </Link>
                 <Link
                   to="/auth"
-                  className="gradient-neon text-white text-sm font-bold px-4 py-2 rounded-lg shadow-neon hover:opacity-90 transition-all"
+                  className="gradient-primary text-white text-sm font-bold px-5 py-2 rounded-xl gradient-glow hover:scale-105 transition-all duration-300"
                 >
                   Inscription
                 </Link>

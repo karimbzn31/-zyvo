@@ -13,9 +13,12 @@ import Auth from './pages/Auth'
 export default function App() {
   return (
     <AuthProvider>
-      <div className="min-h-screen bg-zyvo-light font-sans text-zyvo-dark">
+      <div className="min-h-screen bg-zyvo-dark font-sans text-white">
+        <div className="mesh-bg">
+          <div className="mesh-dot" />
+        </div>
         <Header />
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<SearchPage />} />
